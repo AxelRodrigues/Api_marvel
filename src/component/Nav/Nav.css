@@ -1,0 +1,43 @@
+
+:root{
+    color: #fff;
+}
+
+li{
+    position:relative;
+    float:left;
+    list-style-type: none;
+}
+li a{ 
+    text-decoration:none; 
+    padding:5px 10px; 
+    display:block;
+}
+li  ul{
+    position:absolute;
+    top:25px;
+    left:0;
+    background-color:#333;
+    display:none;
+}
+
+@media(max-width: 500px){
+    ul{
+        display: none;
+    }
+    .buttom-menu{
+        background-color: #333;
+        height: 31px;
+        width: 31px;
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        justify-content: space-between;
+
+        padding: 8px min(46px, max(10vh, 10px));
+    }
+}
+
