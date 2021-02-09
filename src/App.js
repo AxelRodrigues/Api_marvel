@@ -15,13 +15,17 @@ function App() {
   useEffect(()=> {
     axios.get(`http://gateway.marvel.com/v1/public/characters?ts=${timestamp}&apikey=${apikeypublic}&hash=${md5}&limit=9`)
     .then(resp =>{ 
-      updatecharacters(resp.data)
-      console.log(characters.data.results)
-    })
+      updatecharacters(resp.data.data.results)
+      console.log(characters)
+    }).catch(error => console.log(error))
   })
   return (
     <div className="App App-header">
-      
+      <ul>
+      {characters.map(character => (
+        <li> character. </li>
+      ))}
+      </ul>
     </div>
   );
 }
